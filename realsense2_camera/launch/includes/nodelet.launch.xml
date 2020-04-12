@@ -92,6 +92,7 @@
   <arg name="scan_range_min"       default="0.45"/>
   <arg name="scan_range_max"       default="10.0"/>
   <arg name="scan_height"          default="1"/>
+  <arg name="scan_output_frame"    default=""/>
   <arg name="scan_tilt"            default="0"/>
 
   <node unless="$(arg external_manager)" pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" output="screen" required="$(arg required)"/>
@@ -184,6 +185,7 @@
     <param name="scan_range_min"           type="double" value="$(arg scan_range_min)"/>
     <param name="scan_range_max"           type="double" value="$(arg scan_range_max)"/>
     <param name="scan_height"              type="int"    value="$(arg scan_height)"/>
+    <param name="scan_output_frame"        type="str"    value="$(arg scan_output_frame)"/>
     <param name="scan_tilt"                type="int"    value="$(arg scan_tilt)"/>
 
     <remap from="odom/sample"              to="/odom"/>
